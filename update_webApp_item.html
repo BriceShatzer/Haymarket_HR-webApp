@@ -1,0 +1,88 @@
+<div class="blueButton" style="float: left; width: 225px; margin-right: 30px;"><a href="/pages/about_us/new-job-listing">Create New Job Listing</a></div>
+<div class="blueButton" style="float: left; width: 250px; margin-right: 30px;"><a href="/pages/about_us/manage-jobs">Manage Existing Listings</a></div>
+<div class="blueButton" style="float: left; width: 100px;text-transform:capitalize">{module_logout}</div>
+<form name="catcustomcontentform3138" onsubmit="return checkWholeForm3138(this)" enctype="multipart/form-data" method="post" action="/CustomContentProcess.aspx?A=EditSave&amp;CCID=19784&amp;OID={module_oid}&amp;OTYPE={module_otype}">
+    <table class="webform" cellspacing="0" cellpadding="2" border="0">
+        <tbody>
+            <tr>
+                <td><label for="ItemName">Item Name</label><br />
+                <input class="cat_textbox_small" type="text" name="ItemName" id="ItemName" maxlength="255" style="min-width: 350px;" /> &bull;</td>
+            </tr>
+            <tr>
+                <td><label for="ItemDescription">Item Description</label><br />
+                <textarea name="ItemDescription" id="ItemDescription" cols="10" rows="4" class="cat_listbox" style="min-width: 500px;"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="ExpiryDate">Expiry Date</label><br />
+                <input type="radio" value="1" checked="true" id="neverRB" onclick="DisplayTextBox(this,'');return false;" />Never expire<br />
+                <input type="radio" id="daysRB" value="2" onclick="DisplayTextBox(this,'');return false;" />Set days <input type="text" name="Days" id="Days" style="display: none;" /><label id="LBDays" style="display: none;">days</label></td>
+            </tr>
+            <tr>
+                <td style="overflow: hidden;">
+                <input name="CAT_Category" type="checkbox" value="63305" checked="check" style="display: none;" />
+                <div style="float: left; margin-top: 20px;">
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63336" />Adolescent Outpatient<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63339" />Business Office<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63335" />Community Integration Program<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63307" />Fatherhood Program<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63334" />Health and Wellness<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63331" />MAC Unit<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63332" />MATER Hall B<br />
+                </span>
+                </div>
+                <div style="float: left; margin-left: 35px; margin-top: 20px;">
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63333" />Mens Medical Detox<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63337" />Mens Residential<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63309" />MIT(Formally MISA Expansion)<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63306" />Security<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63338" />Supply<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63308" />WIT(Formerly MISA)<br />
+                </span>
+                <span class="categoryCheckbox"><input name="CAT_Category" type="checkbox" value="63330" />Womens Medical Detox<br />
+                </span>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td><input class="cat_button" type="submit" value="Submit" id="catcustomcontentbutton" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <span id="categories"></span>
+    <script type="text/javascript" src="/CatalystScripts/ValidationFunctions.js"></script>
+    <script type="text/javascript" src="/CatalystScripts/Java_DatePicker.js"></script>
+    <script type="text/javascript">
+//<![CDATA[
+var submitcount3138 = 0;
+function checkWholeForm3138(theForm){
+    var why = "";
+    if (theForm.ItemName) why += isEmpty(theForm.ItemName.value, "Item Name");
+    if (theForm.Days) why += isNumericIfVisible(theForm.Days, "days"); 
+    if (why != ""){alert(why);return false;}
+    if($('input[name=CAT_Category]:checked').length<2){
+        if(!confirm('No category has been selected for this job. Do you wish to continue?')){return false;}
+    }    
+    if(submitcount3138 == 0){submitcount3138++;theForm.submit();return false;}else{alert("Form submission is in progress.");return false;}}
+//]]>
+</script>
+</form>
+<script type="text/javascript">
+$(function(){
+    $('#categories').load(window.location.pathname+' '+'#categoryCheck', function() {
+        $.each($('#categoryCheck').data('type').split(', '), function(i, n) {
+            $('.categoryCheckbox:contains(' + n + ') :checkbox').prop('checked', true);
+        });
+    })
+});
+</script>
