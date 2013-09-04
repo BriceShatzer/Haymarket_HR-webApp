@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Manage Jobs</title>
+        <meta name="robots" content="noindex" />
+    </head>
+    <body>
+        <form name="catcustomcontentform67543" onsubmit="return checkWholeForm67543(this)" enctype="multipart/form-data" method="post" action="/CustomContentProcess.aspx?CCID=19784&amp;OID={module_oid}&amp;OTYPE={module_otype}">
+            <table class="webform" cellspacing="0" cellpadding="2" border="0">
+                <tbody>
+                    <tr>
+                        <td><label for="ItemName">Item Name</label><br />
+                        <input class="cat_textbox_small" type="text" name="ItemName" id="ItemName" maxlength="255" /> &bull;</td>
+                    </tr>
+                    <tr>
+                        <td><label for="ItemDescription">Item Description</label><br />
+                        <textarea name="ItemDescription" id="ItemDescription" cols="10" rows="4" class="cat_listbox"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ExpiryDate">Expiry Date</label><br />
+                        <input type="radio" value="1" checked="true" id="neverRB" onclick="DisplayTextBox(this,'');return false;" />Never expire<br />
+                        <input type="radio" id="daysRB" value="2" onclick="DisplayTextBox(this,'');return false;" />Set days <input type="text" name="Days" id="Days" style="display: none; width: 25px;" /><label id="LBDays" style="display: none;">days</label></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="CAT_Category" type="checkbox" value="63305" checked="check" style="display:none;">
+                            <input name="CAT_Category" type="checkbox" value="63336">Adolescent Outpatient<br />
+                            <input name="CAT_Category" type="checkbox" value="63339">Business Office<br />
+                            <input name="CAT_Category" type="checkbox" value="63335">Community Integration Program<br />
+                            <input name="CAT_Category" type="checkbox" value="63307">Fatherhood Program<br />
+                            <input name="CAT_Category" type="checkbox" value="63334">Health and Wellness<br />
+                            <input name="CAT_Category" type="checkbox" value="63331">MAC Unit<br />
+                            <input name="CAT_Category" type="checkbox" value="63332">MATER Hall B<br />
+                            <input name="CAT_Category" type="checkbox" value="63333">Mens Medical Detox<br />
+                            <input name="CAT_Category" type="checkbox" value="63337">Mens Residential<br />
+                            <input name="CAT_Category" type="checkbox" value="63309">MIT(Formally MISA Expansion)<br />
+                            <input name="CAT_Category" type="checkbox" value="63306">Security<br />
+                            <input name="CAT_Category" type="checkbox" value="63338">Supply<br />
+                            <input name="CAT_Category" type="checkbox" value="63308">WIT(Formerly MISA)<br />
+                            <input name="CAT_Category" type="checkbox" value="63330">Womens Medical Detox<br />
+                            <input name="CAT_Category" type="checkbox" value=""><br />
+                            <input name="CAT_Category" type="checkbox" value=""><br />
+                            <input name="CAT_Category" type="checkbox" value=""><br />
+                            
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="cat_button" type="submit" value="Submit" id="catcustomcontentbutton" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <script type="text/javascript" src="/CatalystScripts/ValidationFunctions.js"></script>
+            <script type="text/javascript" src="/CatalystScripts/Java_DatePicker.js"></script>
+            <script type="text/javascript">
+//<![CDATA[
+var submitcount67543 = 0;function checkWholeForm67543(theForm){var why = "";if (theForm.ItemName) why += isEmpty(theForm.ItemName.value, "Item Name");if (theForm.Days) why += isNumericIfVisible(theForm.Days, "days"); if (why != ""){alert(why);return false;}if(submitcount67543 == 0){submitcount67543++;theForm.submit();return false;}else{alert("Form submission is in progress.");return false;}}
+//]]>
+</script>
+        </form>
+    </body>
+</html>
